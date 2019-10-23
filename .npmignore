@@ -1,0 +1,12 @@
+.stencil
+.github
+.vscode
+src
+www
+.editorconfig
+.eslintignore
+.eslintrc.json
+.gitattributes
+.gitignore
+.prettierrc.json
+.sonarcloud.properties
