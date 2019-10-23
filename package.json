@@ -1,5 +1,5 @@
 {
-  "name": "stencil-site-loader",
+  "name": "il-site-loader",
   "private": true,
   "version": "0.0.1",
   "description": "Stencil Site Loader",
@@ -10,7 +10,7 @@
   "types": "dist/types/components.d.ts",
   "collection": "dist/collection/collection-manifest.json",
   "collection:main": "dist/collection/index.js",
-  "unpkg": "dist/stencil-site-loader/stencil-site-loader.js",
+  "unpkg": "dist/il-site-loader/il-site-loader.js",
   "files": [
     "dist/",
     "loader/"

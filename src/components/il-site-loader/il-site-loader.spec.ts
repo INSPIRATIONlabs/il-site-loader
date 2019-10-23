@@ -1,4 +1,4 @@
-import { SiteLoader } from "./site-loader";
+import { IlSiteLoader } from "./il-site-loader";
 
 describe("site-loader", () => {
   it("should build", () => {

@@ -6,10 +6,10 @@ import { GraphData } from "../../types/GraphData";
 import { LangData } from "../../types/LangData";
 
 @Component({
-  tag: "site-loader",
-  styleUrl: "site-loader.css",
+  tag: "il-site-loader",
+  styleUrl: "il-site-loader.css",
 })
-export class SiteLoader {
+export class IlSiteLoader {
   /**
    * The base domain for the project
    */
