@@ -1,6 +1,5 @@
 {
-  "name": "il-site-loader",
-  "private": true,
+  "name": "@inspirationlabs/il-site-loader",
   "version": "0.0.1",
   "description": "Stencil Site Loader",
   "main": "dist/index.js",
