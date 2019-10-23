@@ -1,7 +1,7 @@
 import { IlSiteLoader } from "./il-site-loader";
 
-describe("site-loader", () => {
+describe("il-site-loader", () => {
   it("should build", () => {
-    expect(new SiteLoader()).toBeTruthy();
+    expect(new IlSiteLoader()).toBeTruthy();
   });
 });
