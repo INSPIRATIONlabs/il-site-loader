@@ -1,7 +1,7 @@
 import { Config } from '@stencil/core';
 
 export const config: Config = {
-  namespace: 'testcomponent',
+  namespace: 'il-site-loader',
   outputTargets: [
     {
       type: 'dist',

@@ -12,7 +12,7 @@ import {
 } from '@inspirationlabs/router';
 
 export namespace Components {
-  interface SiteLoader {
+  interface IlSiteLoader {
     /**
     * The base domain for the project
     */
@@ -27,18 +27,18 @@ export namespace Components {
 declare global {
 
 
-  interface HTMLSiteLoaderElement extends Components.SiteLoader, HTMLStencilElement {}
-  var HTMLSiteLoaderElement: {
-    prototype: HTMLSiteLoaderElement;
-    new (): HTMLSiteLoaderElement;
+  interface HTMLIlSiteLoaderElement extends Components.IlSiteLoader, HTMLStencilElement {}
+  var HTMLIlSiteLoaderElement: {
+    prototype: HTMLIlSiteLoaderElement;
+    new (): HTMLIlSiteLoaderElement;
   };
   interface HTMLElementTagNameMap {
-    'site-loader': HTMLSiteLoaderElement;
+    'il-site-loader': HTMLIlSiteLoaderElement;
   }
 }
 
 declare namespace LocalJSX {
-  interface SiteLoader {
+  interface IlSiteLoader {
     /**
     * The base domain for the project
     */
@@ -50,7 +50,7 @@ declare namespace LocalJSX {
   }
 
   interface IntrinsicElements {
-    'site-loader': SiteLoader;
+    'il-site-loader': IlSiteLoader;
   }
 }
 
@@ -60,7 +60,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
-      'site-loader': LocalJSX.SiteLoader & JSXBase.HTMLAttributes<HTMLSiteLoaderElement>;
+      'il-site-loader': LocalJSX.IlSiteLoader & JSXBase.HTMLAttributes<HTMLIlSiteLoaderElement>;
     }
   }
 }
