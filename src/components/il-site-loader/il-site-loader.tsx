@@ -143,7 +143,7 @@ export class IlSiteLoader {
    * Render the widget elements
    * @param data The data received from json
    */
-  private renderItems(data) {
+  public renderItems(data) {
     let Tag = "Div";
     if (data.type) {
       Tag = data.type;
@@ -340,24 +340,10 @@ export class IlSiteLoader {
     // should stay here to remove old headers
     this.renderHeader();
     this.renderHtmlLangTag();
-    if (this.data && this.data.data) {
-      const output = [];
-      if (this.data.menu && this.data.menu.main) {
-        output.push(<il-menu-main data={this.data.menu.main}></il-menu-main>);
-      }
-      this.data.data.map(item => {
-        output.push(this.renderItems(item));
-      });
-      if (this.data.menu && this.data.menu.footer) {
-        output.push(<il-menu-footer data={this.data.menu.footer}></il-menu-footer>);
-      }
-      return (
-        <Host>
-          {output.map(out => {
-            return out;
-          })}
-        </Host>
-      );
+    let Tag = "il-default-template";
+    if (this.data.template) {
+      Tag = this.data.template;
     }
+    return <Tag siteData={this.data}></Tag>;
   }
 }
