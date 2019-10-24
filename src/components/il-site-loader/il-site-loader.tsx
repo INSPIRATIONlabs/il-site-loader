@@ -216,7 +216,13 @@ export class IlSiteLoader {
    * Render the langs in the data to add hreflang header
    * @param langs
    */
-  public renderHrefLangs(langs: LangData[]) {
+
+
+  /**
+   * Render the langs in the data to add hreflang header
+   * @param langs
+   */
+  private renderHrefLangs(langs: LangData[]) {
     const hreflangs: HrefLang[] = [];
     for (const langel of langs) {
       const tag: HrefLang = {
