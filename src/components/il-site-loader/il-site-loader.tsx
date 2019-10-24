@@ -1,9 +1,10 @@
-import { Component, Prop, State, Watch, h, Host } from "@stencil/core";
+import { Component, Prop, State, Watch, h, JSX } from "@stencil/core";
 import { MatchResults } from "@inspirationlabs/router";
 import { LinkRelTypes } from "../../types/LinkRelTypes";
 import { OpenGraphTypes } from "../../types/OpenGraphTypes";
 import { GraphData } from "../../types/GraphData";
 import { LangData } from "../../types/LangData";
+import { HrefLang } from "../../types/HrefLang";
 
 @Component({
   tag: "il-site-loader",
@@ -138,12 +139,7 @@ export class IlSiteLoader {
    * Render the widget elements
    * @param data The data received from json
    */
-
-  /**
-   * Render the widget elements
-   * @param data The data received from json
-   */
-  public renderItems(data) {
+  private renderItems(data) {
     let Tag = "Div";
     if (data.type) {
       Tag = data.type;
@@ -220,10 +216,10 @@ export class IlSiteLoader {
    * Render the langs in the data to add hreflang header
    * @param langs
    */
-  private renderHrefLangs(langs: LangData[]) {
-    const hreflangs = [];
+  public renderHrefLangs(langs: LangData[]) {
+    const hreflangs: HrefLang[] = [];
     for (const langel of langs) {
-      const tag = {
+      const tag: HrefLang = {
         tag: "link",
         attributes: {
           rel: "alternate",
@@ -336,7 +332,7 @@ export class IlSiteLoader {
   /**
    * The main render function
    */
-  render() {
+  render(): JSX.Element {
     // should stay here to remove old headers
     this.renderHeader();
     this.renderHtmlLangTag();

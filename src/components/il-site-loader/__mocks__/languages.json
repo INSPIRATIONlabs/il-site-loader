@@ -1,0 +1,15 @@
+{
+  "languages": [{
+      "language": "x-default",
+      "url": "/"
+    },
+    {
+      "language": "de",
+      "url": "/de"
+    },
+    {
+      "language": "en",
+      "url": "/en"
+    }
+  ]
+}
