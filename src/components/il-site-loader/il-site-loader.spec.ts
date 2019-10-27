@@ -1,5 +1,5 @@
-import { LangData } from './../../types/LangData';
-import * as fs from 'fs';
+import { LangData } from "./../../types/LangData";
+import * as fs from "fs";
 import { newSpecPage } from "@stencil/core/testing";
 import { IlSiteLoader } from "./il-site-loader";
 import { HrefLang } from "../../types/HrefLang";
@@ -26,7 +26,7 @@ describe("il-site-loader", () => {
     it("should return list of hreflangs of type HrefLang", async () => {
       const siteLoader = new IlSiteLoader();
 
-      const mockLanguages = JSON.parse(fs.readFileSync(__dirname + '/__mocks__/languages.json', { encoding: 'utf-8' }));
+      const mockLanguages = JSON.parse(fs.readFileSync(__dirname + "/__mocks__/languages.json", { encoding: "utf-8" }));
 
       const languages: LangData[] = mockLanguages.languages;
       const hreflanglist: HrefLang[] = siteLoader.renderHrefLangs(languages);
@@ -63,7 +63,6 @@ describe("il-site-loader", () => {
       expect(hreflanglist[2].attributes.href).toBeDefined();
       expect(hreflanglist[2].attributes.href).toEqual("/en");
     });
-
   });
 
   describe("render il-site-loader with data", () => {

@@ -139,7 +139,7 @@ export class IlSiteLoader {
    * Render the widget elements
    * @param data The data received from json
    */
-  private renderItems(data) {
+  public renderItems(data) {
     let Tag = "Div";
     if (data.type) {
       Tag = data.type;
@@ -216,13 +216,7 @@ export class IlSiteLoader {
    * Render the langs in the data to add hreflang header
    * @param langs
    */
-
-
-  /**
-   * Render the langs in the data to add hreflang header
-   * @param langs
-   */
-  private renderHrefLangs(langs: LangData[]) {
+  public renderHrefLangs(langs: LangData[]) {
     const hreflangs: HrefLang[] = [];
     for (const langel of langs) {
       const tag: HrefLang = {

@@ -1,13 +1,12 @@
-import { newSpecPage } from '@stencil/core/testing';
+import { newSpecPage } from "@stencil/core/testing";
 import { IlDefaultTemplate } from "./il-default-template";
 
 describe("il-default-template", () => {
-
   it("builds", () => {
     expect(new IlDefaultTemplate()).toBeTruthy();
   });
 
-  it('should render my empty component', async () => {
+  it("should render my empty component", async () => {
     const page = await newSpecPage({
       components: [IlDefaultTemplate],
       html: `<il-default-template></il-default-template>`,
@@ -17,8 +16,5 @@ describe("il-default-template", () => {
     `);
   });
 
-  it('should toggle the checked property', () => {
-
-  });
-
+  it("should toggle the checked property", () => {});
 });
