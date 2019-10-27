@@ -25,6 +25,9 @@ export namespace Components {
     */
     'match': MatchResults;
   }
+  interface IlSiteRoot {
+    'baseUrl': string;
+  }
 }
 
 declare global {
@@ -41,9 +44,16 @@ declare global {
     prototype: HTMLIlSiteLoaderElement;
     new (): HTMLIlSiteLoaderElement;
   };
+
+  interface HTMLIlSiteRootElement extends Components.IlSiteRoot, HTMLStencilElement {}
+  var HTMLIlSiteRootElement: {
+    prototype: HTMLIlSiteRootElement;
+    new (): HTMLIlSiteRootElement;
+  };
   interface HTMLElementTagNameMap {
     'il-default-template': HTMLIlDefaultTemplateElement;
     'il-site-loader': HTMLIlSiteLoaderElement;
+    'il-site-root': HTMLIlSiteRootElement;
   }
 }
 
@@ -61,10 +71,14 @@ declare namespace LocalJSX {
     */
     'match'?: MatchResults;
   }
+  interface IlSiteRoot {
+    'baseUrl'?: string;
+  }
 
   interface IntrinsicElements {
     'il-default-template': IlDefaultTemplate;
     'il-site-loader': IlSiteLoader;
+    'il-site-root': IlSiteRoot;
   }
 }
 
@@ -76,6 +90,7 @@ declare module "@stencil/core" {
     interface IntrinsicElements {
       'il-default-template': LocalJSX.IlDefaultTemplate & JSXBase.HTMLAttributes<HTMLIlDefaultTemplateElement>;
       'il-site-loader': LocalJSX.IlSiteLoader & JSXBase.HTMLAttributes<HTMLIlSiteLoaderElement>;
+      'il-site-root': LocalJSX.IlSiteRoot & JSXBase.HTMLAttributes<HTMLIlSiteRootElement>;
     }
   }
 }

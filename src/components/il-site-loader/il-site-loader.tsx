@@ -9,6 +9,7 @@ import { HrefLang } from "../../types/HrefLang";
 @Component({
   tag: "il-site-loader",
   styleUrl: "il-site-loader.css",
+  shadow: true
 })
 export class IlSiteLoader {
   /**
@@ -190,11 +191,13 @@ export class IlSiteLoader {
   private renderTitle(title: string) {
     const metaEl = document.head.querySelector("meta[charset]");
     let titleEl = document.head.querySelector("title");
-    if (titleEl == null) {
+    if (titleEl == null && metaEl != null) {
       titleEl = document.createElement("title");
       document.head.insertBefore(titleEl, metaEl.nextSibling);
     }
-    titleEl.text = title;
+    if(titleEl != null) {
+      titleEl.text = title;
+    }
   }
 
   /**
@@ -204,12 +207,14 @@ export class IlSiteLoader {
   private renderDescription(description: string) {
     const titleEl = document.head.querySelector("title");
     let descEl = document.head.querySelector('meta[name="description"]');
-    if (descEl == null) {
+    if (descEl == null && titleEl != null) {
       descEl = document.createElement("meta");
       descEl.setAttribute("name", "description");
       document.head.insertBefore(descEl, titleEl.nextSibling);
     }
-    descEl.setAttribute("content", description);
+    if(descEl != null) {
+      descEl.setAttribute("content", description);
+    }
   }
 
   /**

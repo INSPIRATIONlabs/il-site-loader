@@ -7,6 +7,9 @@ import { IlSiteLoader } from "../il-site-loader/il-site-loader";
   shadow: true,
 })
 export class IlDefaultTemplate {
+  /**
+   * Data for the site rendering
+   */
   @Prop() siteData;
   private siteloader: IlSiteLoader = new IlSiteLoader();
 

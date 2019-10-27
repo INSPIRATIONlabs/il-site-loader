@@ -1,5 +1,4 @@
-site-loader {
+:host {
     /* Component styles go here */
-
     background: var(--background);
 }

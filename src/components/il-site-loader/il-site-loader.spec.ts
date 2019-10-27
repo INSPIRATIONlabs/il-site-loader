@@ -10,17 +10,13 @@ describe("il-site-loader", () => {
     beforeEach(async () => {
       page = await newSpecPage({
         components: [IlSiteLoader],
-        html: `<il-default-template></il-default-template>`,
-        supportsShadowDom: false,
+        html: `<il-site-loader></il-site-loader>`,
+        supportsShadowDom: true
       });
     });
 
-    it("should build", () => {
-      expect(new IlSiteLoader()).toBeTruthy();
-    });
-
-    it("should render without shadow dom", async () => {
-      expect(page.root.shadowRoot).toBeFalsy();
+    it("should render with shadow dom", async () => {
+      expect(page.root.shadowRoot).toBeTruthy();
     });
 
     it("should return list of hreflangs of type HrefLang", async () => {
